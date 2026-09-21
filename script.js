@@ -14,7 +14,7 @@ boton.addEventListener("click", function() {
         return;
     }
 
-    if (apodoNormalizado !== "Mi Amorcito") {
+    if (apodoNormalizado !== "miamorcito") {
         mensajeApodo.textContent = "Ese no es tu apodo 👀💛";
         return;
     }
