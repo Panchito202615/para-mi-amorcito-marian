@@ -14,11 +14,13 @@ boton.addEventListener("click", function() {
         return;
     }
 
-    if (apodoNormalizado !== "miamorcito") {
-        mensajeApodo.textContent = "Ese no es tu apodo 👀💛";
-        return;
-    }
-
+    if (
+    apodoNormalizado !== "miamorcito" &&
+    apodoNormalizado !== "miamorcito"
+) {
+    mensajeApodo.textContent = "Ese no es tu apodo 👀💛";
+    return;
+}
     mensajeApodo.textContent = "";
 
     const entrada = document.querySelector(".entrada");
