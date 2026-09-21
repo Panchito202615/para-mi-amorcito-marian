@@ -1,21 +1,20 @@
 const boton = document.querySelector(".entrada button");
 
-const apodoCorrecto = "miamorcito";
-
 boton.addEventListener("click", function() {
 
     const apodo = document.getElementById("apodo").value.trim();
     const mensajeApodo = document.getElementById("mensaje-apodo");
 
-    // Acepta mayúsculas, minúsculas y espacios
-    const apodoNormalizado = apodo.toLowerCase().replace(/\s+/g, "");
+    const apodoNormalizado = apodo
+        .toLowerCase()
+        .replace(/\s+/g, "");
 
     if (apodo === "") {
         mensajeApodo.textContent = "Primero escribe tu apodo 🌼";
         return;
     }
 
-    if (apodoNormalizado !== apodoCorrecto) {
+    if (apodoNormalizado !== "Mi Amorcito") {
         mensajeApodo.textContent = "Ese no es tu apodo 👀💛";
         return;
     }
@@ -31,15 +30,12 @@ boton.addEventListener("click", function() {
 
         entrada.style.display = "none";
         principal.style.display = "flex";
+        principal.style.opacity = "1";
 
-        setTimeout(function() {
-            principal.style.opacity = "1";
-        }, 100);
+        document.querySelector(".principal h1").textContent =
+            "Bienvenida, " + apodo + " 💛";
 
     }, 1000);
-
-    document.querySelector(".principal h1").textContent =
-        "Bienvenida, " + apodo + " 💛";
 
 });
 const comenzar = document.getElementById("comenzar");
