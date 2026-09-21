@@ -1,5 +1,3 @@
-const boton = document.querySelector(".entrada button");
-
 const apodoCorrecto = "Mi Amorcito";
 
 boton.addEventListener("click", function() {
@@ -7,12 +5,15 @@ boton.addEventListener("click", function() {
     const apodo = document.getElementById("apodo").value.trim();
     const mensajeApodo = document.getElementById("mensaje-apodo");
 
+    // Quita espacios y convierte todo a minúsculas
+    const apodoNormalizado = apodo.toLowerCase().replace(/\s+/g, "");
+
     if (apodo === "") {
         mensajeApodo.textContent = "Primero escribe tu apodo 🌼";
         return;
     }
 
-    if (apodo !== apodoCorrecto) {
+    if (apodoNormalizado !== apodoCorrecto) {
         mensajeApodo.textContent = "Ese no es tu apodo 👀💛";
         return;
     }
