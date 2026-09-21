@@ -108,7 +108,7 @@ mensajeDetalle.style.transform = "translateY(0)";
     });
 
 });
-const claveCorrecta = "FreeFire";
+const claveCorrecta = "freefire";
 
 const descubrir = document.getElementById("descubrir");
 const pista = document.getElementById("pista");
