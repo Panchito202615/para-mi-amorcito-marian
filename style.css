@@ -1,0 +1,956 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: Georgia, serif;
+    background: #fff8d6;
+    color: #5c4300;
+    text-align: center;
+}
+
+.entrada,
+.principal {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+.entrada {
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+
+.principal {
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+.entrada h1,
+.principal h1 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.entrada p,
+.principal p {
+    font-size: 20px;
+}
+
+.flor {
+    font-size: 70px;
+    margin-bottom: 15px;
+    animation: flotar 2s ease-in-out infinite;
+}
+
+@keyframes flotar {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+.flor-grande {
+    font-size: 120px;
+    margin: 25px;
+    animation: flotarGrande 3s ease-in-out infinite;
+}
+
+@keyframes flotarGrande {
+    0% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+}
+
+
+input {
+    width: 280px;
+    padding: 14px;
+    border: 2px solid #e6b800;
+    border-radius: 25px;
+    font-size: 17px;
+    text-align: center;
+    outline: none;
+    margin: 15px 0;
+}
+
+button {
+    padding: 14px 30px;
+    border: none;
+    border-radius: 25px;
+    background: #f4c430;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+.petalos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: 0;
+}
+
+.petalos span {
+    position: absolute;
+    top: -50px;
+    font-size: 25px;
+    animation: caer 8s linear infinite;
+}
+
+.petalos span:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.petalos span:nth-child(2) {
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.petalos span:nth-child(3) {
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.petalos span:nth-child(4) {
+    left: 55%;
+    animation-delay: 1s;
+}
+
+.petalos span:nth-child(5) {
+    left: 70%;
+    animation-delay: 3s;
+}
+
+.petalos span:nth-child(6) {
+    left: 80%;
+    animation-delay: 5s;
+}
+
+.petalos span:nth-child(7) {
+    left: 90%;
+    animation-delay: 6s;
+}
+
+.petalos span:nth-child(8) {
+    left: 50%;
+    animation-delay: 7s;
+}
+
+@keyframes caer {
+    0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+.mensaje-portada {
+    max-width: 600px;
+    line-height: 1.6;
+    margin: 8px auto;
+}
+
+#comenzar {
+    margin-top: 25px;
+    font-size: 19px;
+    padding: 15px 35px;
+}
+.carta {
+    display: none;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre {
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+.texto-carta {
+    max-width: 650px;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.texto-carta p {
+    margin-bottom: 20px;
+}
+
+#siguiente {
+    margin-top: 20px;
+}
+.flores-seccion {
+    display: none;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flores-interactivas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin: 40px 0;
+}
+
+.flor-boton {
+    background: transparent;
+    font-size: 70px;
+    padding: 10px;
+    transition: transform 0.3s ease;
+}
+
+.flor-boton:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+#mensaje-flor {
+    max-width: 600px;
+    min-height: 30px;
+    font-size: 22px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+.poema-seccion {
+    display: none;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flor-poema {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: flotar 2.5s ease-in-out infinite;
+}
+
+.poema-texto {
+    max-width: 650px;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+.poema-texto p {
+    margin: 20px 0;
+}
+
+#poema,
+#recuerdos {
+    margin-top: 25px;
+}
+.recuerdos-seccion {
+    display: none;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flor-recuerdos {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: flotar 2.5s ease-in-out infinite;
+}
+.detalles-seccion {
+    display: none;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flor-detalles {
+    font-size: 80px;
+    margin-bottom: 20px;
+    animation: flotar 2.5s ease-in-out infinite;
+}
+
+.detalles-seccion > p {
+    max-width: 600px;
+    font-size: 19px;
+    line-height: 1.6;
+}
+
+.detalles-contenedor {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 900px;
+    margin: 35px 0;
+}
+
+.detalle {
+    width: 190px;
+    min-height: 150px;
+    background: white;
+    color: #5c4300;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s ease;
+}
+
+.detalle:hover {
+    transform: translateY(-8px);
+}
+
+.detalle span {
+    font-size: 45px;
+}
+
+.detalle strong {
+    font-size: 17px;
+}
+
+#final {
+    margin-top: 20px;
+}
+#mensaje-detalle {
+    max-width: 600px;
+    min-height: 30px;
+    margin-top: 10px;
+    padding: 20px 25px;
+    background: white;
+    border-radius: 20px;
+    font-size: 18px;
+    line-height: 1.7;
+    box-sizing: border-box;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.final-seccion {
+    display: none;
+    min-height: 100vh;
+    padding: 40px 20px;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flores-finales {
+    font-size: 55px;
+    margin-bottom: 25px;
+    line-height: 1.5;
+    animation: flotarGrande 3s ease-in-out infinite;
+}
+
+.mensaje-final {
+    max-width: 650px;
+    font-size: 19px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+.mensaje-final p {
+    margin: 20px 0;
+}
+
+#clave {
+    width: 280px;
+    margin: 15px 0;
+}
+
+#descubrir {
+    margin-top: 10px;
+}
+
+#pista {
+    margin-top: 15px;
+    background: transparent;
+    color: #5c4300;
+    border: 2px solid #e6b800;
+}
+
+#mensaje-clave {
+    min-height: 30px;
+    max-width: 500px;
+    margin-top: 20px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+.sorpresa-final {
+    display: none;
+    max-width: none;
+    margin-top: 30px;
+    padding: 30px;
+    background: white;
+    border-radius: 25px;
+    box-sizing: border-box;
+    animation: aparecerSorpresa 1s ease;
+}
+
+.flores-sorpresa {
+    font-size: 45px;
+    margin: 15px 0;
+}
+
+.sorpresa-final h1 {
+    font-size: 32px;
+}
+
+.sorpresa-final p {
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+@keyframes aparecerSorpresa {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.sorpresa-final {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff8d6;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+    margin: 0;
+    z-index: 10;
+    opacity: 0;
+    animation: aparecerSorpresa 1.5s ease forwards;
+}
+.sorpresa-final .flores-sorpresa {
+    display: block;
+    width: 100%;
+}
+
+#ver-final {
+    display: block;
+    margin: 25px auto 0;
+}
+#ver-final {
+    margin-top: 25px;
+    padding: 15px 35px;
+    background: #f4c430;
+    color: #5c4300;
+    font-size: 19px;
+    border-radius: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#ver-final:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(92, 67, 0, 0.2);
+}
+.final-decorado {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background: #fff8d6;
+    color: #5c4300;
+    z-index: 20;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    animation: aparecerFinal 1.5s ease;
+}
+
+/* Contenido central */
+
+.contenido-final {
+    position: relative;
+    z-index: 5;
+    width: 90%;
+    max-width: 650px;
+}
+
+.contenido-final h1 {
+    font-size: 48px;
+    margin: 10px 0 25px;
+}
+
+.corazon-final {
+    font-size: 55px;
+    margin-bottom: 5px;
+    animation: latidoFinal 1.5s ease-in-out infinite;
+}
+
+.mensaje-ultimo {
+    width: 100%;
+    max-width: 620px;
+    padding: 35px 40px;
+    background: rgba(255, 255, 255, 0.88);
+    border-radius: 35px;
+    box-sizing: border-box;
+    font-size: 19px;
+    line-height: 1.8;
+    box-shadow: 0 12px 35px rgba(92, 67, 0, 0.15);
+    border: 2px solid rgba(244, 196, 48, 0.35);
+}
+
+.mensaje-ultimo p {
+    margin: 15px 0;
+}
+
+.mensaje-ultimo h2 {
+    margin-top: 25px;
+    font-size: 30px;
+}
+/* Flores grandes alrededor */
+
+.decoracion {
+    position: absolute;
+    z-index: 2;
+    font-size: 75px;
+    animation: flotarFinal 3s ease-in-out infinite;
+}
+
+.decoracion-1 {
+    top: 20px;
+    left: 20px;
+}
+
+.decoracion-2 {
+    top: 35px;
+    left: 130px;
+    font-size: 45px;
+}
+
+.decoracion-3 {
+    top: 20px;
+    right: 20px;
+}
+
+.decoracion-4 {
+    top: 35px;
+    right: 130px;
+    font-size: 45px;
+}
+
+.decoracion-5 {
+    bottom: 20px;
+    left: 20px;
+}
+
+.decoracion-6 {
+    bottom: 35px;
+    left: 130px;
+    font-size: 45px;
+}
+
+.decoracion-7 {
+    bottom: 20px;
+    right: 20px;
+}
+
+.decoracion-8 {
+    bottom: 35px;
+    right: 130px;
+    font-size: 45px;
+}
+
+/* Pétalos */
+
+.petalo-final {
+    position: absolute;
+    font-size: 28px;
+    opacity: 0;
+    z-index: 15;
+    animation: caerFinal 8s linear infinite;
+}
+
+.petalo-1 {
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.petalo-2 {
+    left: 30%;
+    animation-delay: 2s;
+}
+
+.petalo-3 {
+    left: 50%;
+    animation-delay: 4s;
+}
+
+.petalo-4 {
+    left: 70%;
+    animation-delay: 1s;
+}
+
+.petalo-5 {
+    left: 90%;
+    animation-delay: 3s;
+}
+
+@keyframes caerFinal {
+    0% {
+        top: -50px;
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    50% {
+        transform: translateX(30px) rotate(180deg);
+    }
+
+    100% {
+        top: 110vh;
+        opacity: 0;
+        transform: translateX(-30px) rotate(360deg);
+    }
+}
+
+@keyframes flotarFinal {
+    0% {
+        transform: translateY(0) rotate(-3deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(3deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(-3deg);
+    }
+}
+
+@keyframes latidoFinal {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes caerFinal {
+    0% {
+        top: -40px;
+        opacity: 0;
+        transform: rotate(0deg);
+    }
+
+    10% {
+        opacity: 0.8;
+    }
+
+    100% {
+        top: 110vh;
+        opacity: 0;
+        transform: rotate(360deg);
+    }
+}
+/* RAMITOS DE FLORES */
+
+.ramo {
+    position: absolute;
+    width: 230px;
+    height: 180px;
+    z-index: 3;
+}
+
+.ramo span {
+    position: absolute;
+    display: block;
+    animation: flotarFlores 4s ease-in-out infinite;
+}
+.ramo .flor-grande {
+    font-size: 75px;
+}
+
+.ramo .flor-mediana {
+    font-size: 55px;
+}
+
+.ramo .flor-pequena {
+    font-size: 32px;
+}
+
+/* Arriba izquierda */
+
+.ramo-izquierda-arriba {
+    top: 15px;
+    left: 15px;
+}
+
+.ramo-izquierda-arriba .flor-grande {
+    top: 0;
+    left: 0;
+}
+
+.ramo-izquierda-arriba .flor-mediana {
+    top: 65px;
+    left: 95px;
+}
+
+.ramo-izquierda-arriba .flor-pequena:nth-child(2) {
+    top: 25px;
+    left: 100px;
+}
+
+.ramo-izquierda-arriba .flor-pequena:nth-child(4) {
+    top: 95px;
+    left: 40px;
+}
+
+/* Arriba derecha */
+
+.ramo-derecha-arriba {
+    top: 15px;
+    right: 15px;
+}
+
+.ramo-derecha-arriba .flor-grande {
+    top: 0;
+    right: 0;
+}
+
+.ramo-derecha-arriba .flor-mediana {
+    top: 65px;
+    right: 95px;
+}
+
+.ramo-derecha-arriba .flor-pequena:nth-child(2) {
+    top: 25px;
+    right: 100px;
+}
+
+.ramo-derecha-arriba .flor-pequena:nth-child(4) {
+    top: 95px;
+    right: 40px;
+}
+
+/* Abajo izquierda */
+
+.ramo-izquierda-abajo {
+    bottom: 15px;
+    left: 15px;
+}
+
+.ramo-izquierda-abajo .flor-grande {
+    bottom: 0;
+    left: 0;
+}
+
+.ramo-izquierda-abajo .flor-mediana {
+    bottom: 65px;
+    left: 95px;
+}
+
+.ramo-izquierda-abajo .flor-pequena:nth-child(2) {
+    bottom: 25px;
+    left: 100px;
+}
+
+.ramo-izquierda-abajo .flor-pequena:nth-child(4) {
+    bottom: 95px;
+    left: 40px;
+}
+
+/* Abajo derecha */
+
+.ramo-derecha-abajo {
+    bottom: 15px;
+    right: 15px;
+}
+
+.ramo-derecha-abajo .flor-grande {
+    bottom: 0;
+    right: 0;
+}
+
+.ramo-derecha-abajo .flor-mediana {
+    bottom: 65px;
+    right: 95px;
+}
+
+.ramo-derecha-abajo .flor-pequena:nth-child(2) {
+    bottom: 25px;
+    right: 100px;
+}
+
+.ramo-derecha-abajo .flor-pequena:nth-child(4) {
+    bottom: 95px;
+    right: 40px;
+}
+/* CORAZONES DECORATIVOS */
+
+.corazon-decorativo {
+    position: absolute;
+    z-index: 2;
+    font-size: 28px;
+    animation: flotarCorazon 3s ease-in-out infinite;
+}
+
+.corazon-1 {
+    top: 25%;
+    left: 8%;
+}
+
+.corazon-2 {
+    top: 35%;
+    right: 10%;
+    font-size: 35px;
+}
+
+.corazon-3 {
+    bottom: 25%;
+    left: 12%;
+}
+
+.corazon-4 {
+    bottom: 35%;
+    right: 8%;
+    font-size: 32px;
+}
+
+/* HOJAS */
+
+.hoja-decorativa {
+    position: absolute;
+    z-index: 2;
+    font-size: 35px;
+    opacity: 0.8;
+}
+
+.hoja-1 {
+    top: 18%;
+    left: 25%;
+    transform: rotate(-25deg);
+}
+
+.hoja-2 {
+    top: 20%;
+    right: 25%;
+    transform: rotate(25deg);
+}
+
+.hoja-3 {
+    bottom: 18%;
+    left: 25%;
+    transform: rotate(25deg);
+}
+
+.hoja-4 {
+    bottom: 20%;
+    right: 25%;
+    transform: rotate(-25deg);
+}
+
+@keyframes flotarCorazon {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+@keyframes flotarFlores {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-6px) rotate(2deg);
+    }
+
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+}
+@keyframes aparecerFinal {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+#mensaje-apodo {
+    min-height: 25px;
+    margin: 0 0 10px;
+    font-size: 16px;
+    color: #b8860b;
+}
