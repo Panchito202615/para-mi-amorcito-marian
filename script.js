@@ -1,6 +1,6 @@
 const boton = document.querySelector(".entrada button");
 
-const apodoCorrecto = "miamorcito";
+const apodoCorrecto = "Mi Amorcito";
 
 boton.addEventListener("click", function() {
 
