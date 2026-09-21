@@ -1,6 +1,6 @@
 const boton = document.querySelector(".entrada button");
 
-const apodoCorrecto = "miamor";
+const apodoCorrecto = "Mi Amorcito";
 
 boton.addEventListener("click", function() {
 
@@ -109,7 +109,7 @@ mensajeDetalle.style.transform = "translateY(0)";
     });
 
 });
-const claveCorrecta = "amarillo";
+const claveCorrecta = "FreeFire";
 
 const descubrir = document.getElementById("descubrir");
 const pista = document.getElementById("pista");
@@ -146,7 +146,7 @@ descubrir.addEventListener("click", function() {
 pista.addEventListener("click", function() {
 
     mensajeClave.textContent =
-        "Pista: es una palabra que usamos muchísimo entre nosotros. 💛";
+        "Pista: Es algo que nosotros hacemos en los descansos y donde podemos sentirnos juntos y no extrañarnos tanto 💛";
 
 });
 const botonFinal = document.getElementById("final");
