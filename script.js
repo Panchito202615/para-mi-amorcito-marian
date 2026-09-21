@@ -1,11 +1,13 @@
-const apodoCorrecto = "Mi Amorcito";
+const boton = document.querySelector(".entrada button");
+
+const apodoCorrecto = "miamorcito";
 
 boton.addEventListener("click", function() {
 
     const apodo = document.getElementById("apodo").value.trim();
     const mensajeApodo = document.getElementById("mensaje-apodo");
 
-    // Quita espacios y convierte todo a minúsculas
+    // Acepta mayúsculas, minúsculas y espacios
     const apodoNormalizado = apodo.toLowerCase().replace(/\s+/g, "");
 
     if (apodo === "") {
